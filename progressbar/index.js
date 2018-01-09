@@ -16,8 +16,8 @@
 var ColorProgress = function (el, type, percentage, max, height) {
 	var types = ['exceed', 'success', 'warning', 'danger']
 	type = types.indexOf(type) > -1 ? type : types[0]
-	percentage = (percentage && percentage <= max) ? percentage : 0
 	max = (max && max >= 100) ? max : 100
+	percentage = (percentage && percentage <= max) ? percentage : 0
 	height = height || 12
 
 	var setPercentage = function (percentage) {

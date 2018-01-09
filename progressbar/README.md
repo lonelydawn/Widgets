@@ -3,6 +3,8 @@
 * Native HTML + CSS + JS
 * Chrome, Firefox, IE 9 +
 
+
+
 ## Usage
 
 ```html
@@ -14,20 +16,24 @@
 </script>
 ```
 
+
+
 ### params
 
 | name       | type                                     | comment                        |
-| ---------- | ---------------------------------------- | ------------------------------ |
+| :--------- | :--------------------------------------- | :----------------------------- |
 | el         | String                                   | DOM Node ID                    |
 | type       | Enum['exceed', 'success', 'warning', 'danger'] | Bar Type (Determine the color) |
 | percentage | Integer                                  | Current Progress               |
 | max        | Integer                                  | Max Progress                   |
 | height     | Integer                                  | Bar Height                     |
 
+
+
 ### methods
 
 | name          | comment              |
-| ------------- | -------------------- |
+| :------------ | :------------------- |
 | setPercentage | set current progress |
 | setType       | set progress type    |
 

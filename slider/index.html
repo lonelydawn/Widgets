@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slider</title>
+	<link rel="stylesheet" type="text/css" href="./index.css">
+	<style type="text/css">
+		.slider {
+			width: 80%;
+			margin: 100px auto 0;
+		}
+	</style>
+</head>
+<body>
+<button onclick="toggleType('circle')">Circle</button>
+<button onclick="toggleType('square')">Square</button>
+<button onclick="toggleType('diamond')">Diamond</button>
+<div id="slider" class="slider"></div>
+<script type="text/javascript" src="./index.js"></script>
+<script type="text/javascript">
+	var sb
+	var toggleType = function (type) {
+		// sb.setBarPosition(Math.floor(Math.random() * 100))
+		sb = new SliderBar({
+			el: 'slider',
+			type: type,
+			onBarMousedown: function (params) {
+				console.log(params)
+			},
+			onBarMouseup: function (params) {
+				console.log(params)
+			}
+		})
+	}
+</script>
+</body>
+</html>

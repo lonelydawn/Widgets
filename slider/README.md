@@ -39,6 +39,6 @@
 ### Methods
 
 | Name           | Parameter  | Return          | Comment                                  |
-| -------------- | ---------- | --------------- | ---------------------------------------- |
+| :------------- | :--------- | :-------------- | :--------------------------------------- |
 | setBarPosition | pos, index | void            | Set position of the indexed bar. If index is not defined, set all. |
 | getBarPosition | index      | Number \| Array | Return position of the indexed bar. If index is not defined, return all. |

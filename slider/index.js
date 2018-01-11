@@ -7,7 +7,7 @@
  * min 			Number 		default 0 			Lower Limit
  * max 			Number 		default 100			Upper Limit
  * barNumber 	Integer 	default 1			Bar Number
- * positions 	Array 		default [0...]		Bar Initial Positions (Array length determined by barNumber.)
+ * positions 	Array 		default [min...]		Bar Initial Positions (Array length determined by barNumber.)
  * type 		String 		default 'circle'	Bar Type
  * trackHeight 	Integer 	default 10			Track Height (Also determines bar size.)
  * 
@@ -33,12 +33,12 @@ Array.prototype.filter = Array.prototype.filter || function (cb) {
 }
 
 var EasySliderBar = function (options) {
-	// Add class, then return the changed className
+	// Add class, and return the changed className
 	var getPushedClass = function (className, value) {
 		return typeof className === 'string' && typeof value === 'string'
 			? className.split(' ').concat(value).join(' ') : className 
 	}
-	// Remove class, then return the changed className
+	// Remove class, and return the changed className
 	var getRemovedClass = function (className, value) {
 		if (typeof className === 'string' && typeof value === 'string') {
 			return className.split(' ').filter(function (item) {

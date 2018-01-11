@@ -3,10 +3,10 @@
 	height: 100%;
 	position: relative;
 	border-radius: 100px;
+	font-family: Roboto;
 	background-color: #e4e7ed;
 }
 .slider-label {
-	width: 36px;
     padding: 3px 0;
     position: absolute;
     top: -40px;
@@ -24,7 +24,7 @@
 	border-top-color: #303133;
 	position:absolute;
 	top: 100%;
-	left: 13px;
+	left: calc(50% - 6px);
 	content:""
 }
 .slider-label.hidden {

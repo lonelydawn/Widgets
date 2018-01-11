@@ -4,33 +4,189 @@
 	<title>Slider</title>
 	<link rel="stylesheet" type="text/css" href="./index.css">
 	<style type="text/css">
-		.slider {
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: Roboto;
+		}
+		.slider-example {
 			width: 80%;
-			margin: 100px auto 0;
+			margin: 20px auto 0;
+		}
+		.toolbox-slider {
+
+		}
+		.text-slider-info {
+			padding: 5px;
+			color: #333;
+			font-size: 16px;
+			letter-spacing: 1px;
+			line-height: 30px;
+		}
+		.text-slider-info>span {
+			color: #555;
+			font-size: 14px;
+		}
+		.btn-slider-type {
+			outline: none;
+			width: 80px;
+			padding: 10px 8px;
+			border-radius: 3px;
+			border: 1px solid #ccc;
+			background-color: #fff;
+			transition: all 150ms linear;
+		}
+		.btn-slider-type:hover {
+			border-color: #333;
+			background-color: #ccc;
+		}
+		.input-slider-position {
+			outline: none;
+			width: 200px;
+			color: #333;
+			padding: 10px 5px;
+			border-radius: 3px;
+			border: 1px solid #ccc;
+			transition: all 200ms linear; 
+		}
+		.input-slider-position:focus {
+			border-color: #0084ff;
 		}
 	</style>
+	<script type="text/javascript" src="./index.js"></script>
 </head>
 <body>
-<button onclick="toggleType('circle')">Circle</button>
-<button onclick="toggleType('square')">Square</button>
-<button onclick="toggleType('diamond')">Diamond</button>
-<div id="slider" class="slider"></div>
-<script type="text/javascript" src="./index.js"></script>
-<script type="text/javascript">
-	var sb
-	var toggleType = function (type) {
-		// sb.setBarPosition(Math.floor(Math.random() * 100))
-		sb = new SliderBar({
-			el: 'slider',
-			type: type,
-			onBarMousedown: function (params) {
-				console.log(params)
+<div class="slider-example">
+	<h2>Slider Example 1</h2>
+	<div class="toolbox-slider">
+		<p class="text-slider-info">
+			Slider Property:&nbsp;<span>min: 0, max: 100, scale: 0, trackHeight: 10</span>
+		</p>
+		<p class="text-slider-info">
+			Slider Position:&nbsp;<span id="posText1">0</span>
+		</p>
+	</div>
+	<div id="slider1"></div>
+	<script type="text/javascript">
+		var sb1 = new EasySliderBar({
+			el: 'slider1',
+			onBarMoveBegin: function (params) {
+				document.getElementById('posText1').innerHTML = params.position
 			},
-			onBarMouseup: function (params) {
-				console.log(params)
+			onBarMoving: function (params) {
+				document.getElementById('posText1').innerHTML = params.position
 			}
 		})
-	}
-</script>
+	</script>
+</div>
+<div class="slider-example">
+	<h2>Slider Example 2</h2>
+	<div class="toolbox-slider">
+		<p class="text-slider-info">
+			Slider Property:&nbsp;<span>min: -5, max: 110, scale: 2, trackHeight: 12</span>
+		</p>
+		<p class="text-slider-info">
+			Slider Position:&nbsp;<span id="posText2">-5</span>
+		</p>
+	</div>
+	<div id="slider2"></div>
+	<script type="text/javascript">
+		var sb2 = new EasySliderBar({
+			el: 'slider2',
+			scale: 2,
+			min: -5,
+			max: 110,
+			trackHeight: 12,
+			onBarMoveBegin: function (params) {
+				document.getElementById('posText2').innerHTML = params.position
+			},
+			onBarMoving: function (params) {
+				document.getElementById('posText2').innerHTML = params.position
+			}
+		})
+	</script>
+</div>
+<div class="slider-example">
+	<h2>Slider Example 3</h2>
+	<div class="toolbox-slider">
+		<p class="text-slider-info">
+			Slider Property:&nbsp;<span>min: 10, max: 120, scale: 1, trackHeight: 10</span>
+		</p>
+		<p class="text-slider-info">
+			Slider Position:
+			<span id="posText30">30</span>,&nbsp;
+			<span id="posText31">40</span>,&nbsp;
+			<span id="posText32">10</span>
+		</p>
+		<button class="btn-slider-type" onclick="toggleType('circle')">Circle</button>
+		<button class="btn-slider-type" onclick="toggleType('square')">Square</button>
+		<button class="btn-slider-type" onclick="toggleType('diamond')">Diamond</button>
+	</div>
+	<div id="slider3"></div>
+	<script type="text/javascript">
+		var sb3
+		var toggleType = function (type) {
+			// sb.setBarPosition(Math.floor(Math.random() * 100))
+			sb3 = new EasySliderBar({
+				el: 'slider3',
+				type: type || 'circle',
+				scale: 1,
+				min: 10,
+				max: 120,
+				barNumber: 3,
+				positions: [30, 40],
+				onBarMoveBegin: function (params) {
+					document.getElementById('posText3' + params.index).innerHTML = params.position
+				},
+				onBarMoving: function (params) {
+					document.getElementById('posText3' + params.index).innerHTML = params.position
+				}
+			})
+		}
+		toggleType()
+	</script>
+</div>
+<div class="slider-example">
+	<h2>Slider Example 4</h2>
+	<div class="toolbox-slider">
+		<p class="text-slider-info">
+			Slider Property:&nbsp;<span>min: 10, max: 120, scale: 1, trackHeight: 8</span>
+		</p>
+		<p class="text-slider-info">
+			<label for="posInput">Slider Position:</label>
+			<input 
+				id="posInput"
+				class="input-slider-position"
+				type="text"
+				name="posInput"
+				value="10"
+				placeholder="toggle position.."
+				onkeyup="togglePosition(this)">
+		</p>
+	</div>
+	<div id="slider4"></div>
+	<script type="text/javascript">
+		var sb4 = new EasySliderBar({
+			el: 'slider4',
+			type: 'circle',
+			scale: 1,
+			min: 10,
+			max: 120,
+			trackHeight: 8,
+			onBarMoveBegin: function (params) {
+				document.getElementById('posInput').value = params.position
+			},
+			onBarMoving: function (params) {
+				document.getElementById('posInput').value = params.position
+			},
+			onBarMoveEnd: function (params) {
+				// do sth
+			}
+		})
+		var togglePosition = function (_self) {
+			sb4.setBarPosition(_self.value)
+		}
+	</script>
+</div>
 </body>
 </html>

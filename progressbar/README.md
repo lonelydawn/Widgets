@@ -18,11 +18,11 @@
 
 
 
-### params
+### Options
 
 | name       | type                                     | comment                        |
 | :--------- | :--------------------------------------- | :----------------------------- |
-| el         | String                                   | DOM Node ID                    |
+| el         | String                                   | DOM Node                       |
 | type       | Enum['exceed', 'success', 'warning', 'danger'] | Bar Type (Determine the color) |
 | percentage | Integer                                  | Current Progress               |
 | max        | Integer                                  | Max Progress                   |
@@ -30,7 +30,7 @@
 
 
 
-### methods
+### Methods
 
 | name          | comment              |
 | :------------ | :------------------- |

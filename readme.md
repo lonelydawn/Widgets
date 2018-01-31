@@ -1,10 +1,8 @@
 # Widgets
 
-This is javascript widgets respository aimed to help developers achieve their goals fast!
+Front-end widgets repository, aiming to build some special function quickly!
 
-### content
-
-This is the widgets list.
+### Widgets list
 
 [ColorProgressBar](https://github.com/lonelydawn/Widgets/tree/master/progressbar)
 

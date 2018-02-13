@@ -53,19 +53,19 @@ toaster.error({
 
 ### Options
 
-| Name         | Type                             | Constraint         | Comment                            |
-| :----------- | :------------------------------- | :----------------- | :--------------------------------- |
-| text         | String                           | required           | Message content                    |
-| textAlign    | enum['center','left','right']    | default 'center'   | Determine Text align               |
-| withIcon     | boolean                          | default false      | Create icon or not                 |
-| closable     | boolean                          | default false      | Create close button or not         |
-| animation    | boolean                          | default false      | Use animation to transit or not    |
-| duration     | Integer                          | default 2000       | Animation duration                 |
+| Name      | Type                          | Constraint       | Comment                         |
+| :-------- | :---------------------------- | :--------------- | :------------------------------ |
+| text      | String                        | required         | Message content                 |
+| textAlign | enum['center','left','right'] | default 'center' | Determine Text align            |
+| withIcon  | boolean                       | default false    | Create icon or not              |
+| closable  | boolean                       | default false    | Create close button or not      |
+| animation | boolean                       | default false    | Use animation to transit or not |
+| duration  | Integer                       | default 2000     | Message duration                |
 
 ### Events
 
-| Name             | Comment                 |
-| :--------------- | :---------------------- |
-| onClick          | Message is clicked      |
-| onAppear         | Message is created      |
-| onDisappear      | Message is removed      |
+| Name     | Comment            |
+| :------- | :----------------- |
+| onClick  | Message is clicked |
+| onAppear | Message is created |
+| onVanish | Message is removed |

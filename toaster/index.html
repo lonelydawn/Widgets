@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+    <meta charset="utf-8">
+    <head>
+        <title>toaster example</title>
+        <link rel="stylesheet" href="index.css">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .btn-group {
+                margin: 300px 30px 0 30px;
+            }
+            .btn {
+                display: inline-block;
+                vertical-align: top;
+                user-select: none;
+                outline: none;
+                border: 1px solid #ccc;
+                background-color: #fff;
+                border-radius: 5px;
+                width: 80px;
+                padding: 5px 3px;
+                transition: all 240ms linear;
+            }
+            .btn-cold:hover {
+                box-shadow: 0 0 3px 1px #999;
+                border-color: #555;
+                background-color: #e5e5e5;
+            }
+            .config-list {
+                list-style: none;
+                margin: 30px;
+            }
+            .config-list-title {
+                height: 40px;
+                line-height: 40px;
+                color: #333;
+            }
+            .config-list-item {
+                height: 32px;
+                line-height: 32px;
+                color: #888;
+            }
+            .item-key {
+                display: inline-block;
+                min-width: 240px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="btn-group">
+            <button class="btn btn-cold" onclick="toasterWait()">default</button>
+            <button class="btn btn-cold" onclick="toasterInfo()">info</button>
+            <button class="btn btn-cold" onclick="toasterSuccess()">success</button>
+            <button class="btn btn-cold" onclick="toasterWarning()">warning</button>
+            <button class="btn btn-cold" onclick="toasterError()">error</button>
+        </div>
+        <ul class="config-list">
+            <li class="config-list-title">
+                Config Options
+            </li>
+            <li class="config-list-item">
+                <span class="item-key">text</span>
+                required
+            </li>
+            <li class="config-list-item">
+                <span class="item-key">textAlign</span>
+                default: center
+            </li>
+            <li class="config-list-item">
+                <span class="item-key">withIcon</span>
+                default: true
+            </li>
+            <li class="config-list-item">
+                <span class="item-key">closable</span>
+                default: true
+            </li>
+            <li class="config-list-item">
+                <span class="item-key">animation</span>
+                default: true
+            </li>
+            <li class="config-list-item">
+                <span class="item-key">duration</span>
+                default: 1000ms
+            </li>
+            <li class="config-list-item">
+                <span class="item-key">onClick</span>
+                default: new Function
+            </li>
+            <li class="config-list-item">
+                <span class="item-key">onAppear</span>
+                default: new Function
+            </li>
+            <li class="config-list-item">
+                <span class="item-key">onDisappear</span>
+                default: new Function
+            </li>
+        </ul>
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript">
+            // convert options to string
+            var getMixedPayload = function (payload) {
+                for (var index in payload) {
+                    payload.text += (index !== 'text') 
+                    ? index + ' : ' + payload[index] + ' ,  ' : ''
+                }
+                return payload
+            }
+            var toaster = new Toaster()
+            var toasterWait = function () {
+                toaster.wait({
+                    text: 'default config'
+                })
+            }
+            var toasterInfo = function () {
+                toaster.info(getMixedPayload({
+                    text: '',
+                    textAlign: 'center',
+                    withIcon: true,
+                    closable: true,
+                    animation: true,
+                    duration: 3500,
+                    onClick: function (params) {
+                        console.log('click', params)
+                    },
+                    onAppear: function (params) {
+                        console.log('appear', params)
+                    },
+                    onVanish: function (params) {
+                        console.log('vanish', params)
+                    }
+                }))
+            }
+            var toasterSuccess = function () {
+                toaster.success(getMixedPayload({
+                    text: '',
+                    textAlign: 'left',
+                    withIcon: true,
+                    closable: true,
+                    duration: 3000
+                }))
+            }
+            var toasterWarning = function () {
+                toaster.warning(getMixedPayload({
+                    text: '',
+                    textAlign: 'right',
+                    withIcon: true,
+                    animation: true,
+                    duration: 2500
+                }))
+            }
+            var toasterError = function () {
+                toaster.error(getMixedPayload({
+                    text: '',
+                    textAlign: 'center',
+                    closable: true,
+                    animation: true,
+                    duration: 2000
+                }))
+            }
+        </script>
+    </body>
+</html>

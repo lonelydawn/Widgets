@@ -14,4 +14,4 @@ Front-end widgets repository, aiming to build some special function quickly!
 
 
 
-If you have some questions, please send email to lonelydawn@sina.com.
+If you have some questions, please email lonelydawn@sina.com.

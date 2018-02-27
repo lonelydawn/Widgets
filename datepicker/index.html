@@ -1,11 +1,21 @@
 <html>
-    <meta charset="utf-8">
-    <head>
-        <title>datepicker example</title>
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <script type="text/javascript" src="index.js">
-        </script>
-    </body>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<title>datepicker example</title>
+	<link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+	<input id="picker"/>
+	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript">
+		var datepicker = new EasyDatePicker({
+			el: 'picker',
+			date: '2016-04-14',
+			onChange: function (old, now) {
+				console.log(old, now)
+			}
+		})
+	</script>
+</body>
 </html>

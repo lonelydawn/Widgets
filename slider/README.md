@@ -12,9 +12,9 @@
 <script type="text/javascript">
 	var sb = new EasySliderBar({
 		el: 'slider',
-        	onBarMoveBegin: function (index, position) {
-            		// do sth
-        	}
+        onBarMoveBegin: function (index, position) {
+            // do sth
+        }
 	})
 </script>
 ```

@@ -99,37 +99,37 @@ var tv = new EasyTreeview({
 
 ## Option
 
-### el  (String | required)
+#### el  (String | required)
 
 The document element which is the container of treeview. 
 
 If it does't exist, the treeview will not be created.
 
-### draggable (Boolean | default: false)
+#### draggable (Boolean | default: false)
 
 If value is true, the tree node will be draggable.
 
-### checkable (Boolean | default: false)
+#### checkable (Boolean | default: false)
 
 If value is true, the tree node will have checkbox. 
 
-### data (Array | required)
+#### data (Array | required)
 
 User data which the treeview depended on.
 
-### data.text (String | required)
+#### data.text (String | required)
 
 Text of tree node.
 
-### data.style (Object | optional)
+#### data.style (Object | optional)
 
 Customized node style.
 
-### data.on (Object | optional)
+#### data.on (Object | optional)
 
 Customized node event listener.
 
-### data.children (Object | optional)
+#### data.children (Object | optional)
 
 Sub tree.
 
@@ -139,43 +139,43 @@ Sub tree.
 - node        object packed by system based on the node data
 - symbols   all checked nodes' symbol
 
-### onClick (Function | default: f (symbol, node) {})
+#### onClick (Function | default: f (symbol, node) {})
 
 Triggered when tree node is clicked. 
 
-### onDragged (Function | default: f (symbol, node) {})
+#### onDragged (Function | default: f (symbol, node) {})
 
 Triggered when tree node is dragged (The treeview should be draggable).
 
-### onDropped (Function | default: f (symbol, node) {})
+#### onDropped (Function | default: f (symbol, node) {})
 
 Triggered when tree node is dropped (The treeview should be draggable).
 
 PS: Argument node is't the dragged element but the dropped target.
 
-### onChecked (Function | default: f (symbol, node, symbols) {})
+#### onChecked (Function | default: f (symbol, node, symbols) {})
 
 Triggered when tree node is checked (The treeview should be checkable). 
 
-### onUnchecked (Function | default: f (symbol, node, symbols) {})
+#### onUnchecked (Function | default: f (symbol, node, symbols) {})
 
 Triggered when tree node is unchecked (The treeview should be checkable).
 
 ## Method
 
-### getNodes () : Array
+#### getNodes () : Array
 
 Get node collection which is packed by system.
 
-### getCheckedNodes (): Array
+#### getCheckedNodes (): Array
 
 Get checked node collection.
 
-### getTree (): Array
+#### getTree (): Array
 
 Get new tree data after drag-drop.
 
-##Extra
+## Extra
 
 If you want to customize style detaily, please overwrite the class style of node.
 

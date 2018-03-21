@@ -2,7 +2,7 @@
 
 Front-end widgets repository, aiming to build some special function quickly!
 
-##Widgets list
+## Widgets list
 
 [ColorProgressBar](https://github.com/lonelydawn/Widgets/tree/master/progressbar)
 
@@ -14,13 +14,11 @@ Front-end widgets repository, aiming to build some special function quickly!
 
 [EasyTreeview](https://github.com/lonelydawn/Widgets/tree/master/treeview)
 
-
-
 ## Hack
 
 If you want to compile and minify some files to a smaller size after hacking them,  please take steps:
 
-###1. install dependencies
+### 1. install dependencies
 
 ```bash
 # suggest
@@ -48,8 +46,6 @@ compile and minify specific widgets
 gulp toaster:minify
 ```
 
-
-
-##PS
+## PS
 
 If you have some questions, please email lonelydawn@sina.com.

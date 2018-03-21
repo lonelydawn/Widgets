@@ -135,11 +135,10 @@ Sub tree.
 
 ## Event
 
-- symbol     index distributed by system
-- node        object packed by system based on the node data
-- symbols   all checked nodes' symbol
-
 #### onClick (Function | default: f (symbol, node) {})
+
+- symbol, index distributed by system
+- node, object packed by system based on the node data
 
 Triggered when tree node is clicked. 
 
@@ -154,6 +153,8 @@ Triggered when tree node is dropped (The treeview should be draggable).
 PS: Argument node is't the dragged element but the dropped target.
 
 #### onChecked (Function | default: f (symbol, node, symbols) {})
+
+* symbols, all checked nodes' symbol
 
 Triggered when tree node is checked (The treeview should be checkable). 
 

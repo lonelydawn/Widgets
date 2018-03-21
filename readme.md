@@ -12,6 +12,6 @@ Front-end widgets repository, aiming to build some special function quickly!
 
 [EasyDatePicker](https://github.com/lonelydawn/Widgets/tree/master/datepicker)
 
-
+[EasyTreeview](https://github.com/lonelydawn/Widgets/tree/master/treeview)
 
 If you have some questions, please email lonelydawn@sina.com.

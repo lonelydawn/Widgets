@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+<body>
+<div id="tree" style="width: 300px;">
+	<!-- <ul class="sub-tree">
+		<li class="branch-node" draggable="true">
+			<div class="node-body">
+				<span class="collapse-switch"></span>
+				<span class="checkbox"></span>
+				<span class="node-text">节点</span>
+			</div>
+			<ul class="sub-tree">
+				
+			</ul>
+		</li>
+	</ul> -->
+</div>
+<button onclick="test()">click</button>
+<script type="text/javascript" src="./index.js"></script>
+<script type="text/javascript">
+
+	var tv = new EasyTreeview({
+		el: 'tree',
+		draggable: true,
+		checkable: true,
+		onClick: function (symbol, node) {
+			// console.log('%o %o', symbol, node)
+		},
+		onDragged: function (symbol, node) {
+			console.log("dragged")
+		},
+		onDropped: function (symbol, node) {
+			console.log("dropped")
+		},
+		onChecked: function (symbol, node, symbols) {
+			// console.log('%o %o %o', symbol, node, symbols)
+		},
+		onUnchecked: function (symbol, node, symbols) {
+			// console.log('%o %o %o', symbol, node, symbols)
+		},
+		data: [
+			{
+				id: 0,
+				text: '服装',
+				children: [
+					{
+						id: 4,
+						text: '男装'
+					}, {
+						id: 5,
+						text: '女装'
+					}, {
+						id: 6,
+						text: '童装',
+						style: {
+							color: '#e33',
+							lineHeight: '21px'
+						},
+						on: {
+							click: function (e) {
+								console.log(e.target)
+							}
+						},
+						children: [
+							{
+								id: 12,
+								text: '帽子'
+							}, {
+								id: 13,
+								text: '裙子',
+								checked: true
+							}, {
+								id: 14,
+								text: '小牛仔'
+							}
+						]
+					}
+				]
+			}, {
+				id: 1,
+				text: '食品',
+				children: [
+					{
+						id: 7,
+						text: '蔬菜',
+						style: {
+							color: '#fff',
+							backgroundColor: '#bbdefb'
+						},
+						checked: true
+					}, {
+						id: 8,
+						text: '水果'
+					}, {
+						id: 9,
+						text: '肉禽'
+					}
+				]
+			}, {
+				id: 2,
+				text: '家电',
+				collapsed: true,
+				children: [
+					{
+						id: 10,
+						text: '冰箱'
+					}
+				]
+			}, {
+				id: 3,
+				text: '图书'
+			}
+		]
+	})
+	function test () {
+		// console.log(tv.getNodes())
+		console.log(tv.getCheckedNodes())
+		// console.log(tv.getTree())
+	}
+</script>
+</body>
+</html>

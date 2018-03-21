@@ -1,0 +1,95 @@
+.sub-tree {
+	padding: 0;
+	overflow: hidden;
+	transition: all 240ms linear;
+}
+.sub-tree.invisible {
+	height: 0;
+}
+.sub-tree * {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	list-style: none;
+}
+.branch-node {
+	padding-left: 30px;
+	cursor: pointer;
+	min-height: 24px;
+	line-height: 24px;
+	transition: all 160ms linear;
+}
+.collapse-switch,
+.checkbox {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+}
+.collapse-switch:before {
+	position: absolute;
+	display: block;
+	content: '';
+	left: 0;
+	top: 4px;
+	height: 0;
+	width: 0;
+	border-radius: 3px;
+	border: 6px solid transparent;
+	border-top-color: #333; 
+}
+.collapse-switch {
+	visibility: hidden;
+}
+.node-body.branched .collapse-switch {
+	visibility: visible;
+}
+.node-body.collapsed .collapse-switch:before {
+	top: 0;
+	left: 4px;
+	border-top-color: transparent;
+	border-left-color: #333;
+}
+.checkbox:after,
+.checkbox:before {
+	position: absolute;
+	display: block;
+	content: '';
+	border-radius: 3px;
+	transition: all 160ms linear;
+}
+.checkbox:before {
+	left: 0;
+	top: 0;
+	width: 12px;
+	height: 12px;
+	border: 1px solid #2196f3;
+	background-color: #fff;
+}
+.checkbox:hover:before {
+	border-color: #1e88e5;
+	background-color: #e3f2fd;
+}
+.checkbox:after {
+	left: 3px;
+	top: 3px;
+	width: 8px;
+	height: 8px;
+	background-color: #fff;
+}
+.node-body.some-check .checkbox:after {
+	background-color: #90caf9;
+}
+.node-body.checked .checkbox:after {
+	background-color: #2196f3;
+}
+.node-text {
+	display: inline-block;
+	vertical-align: middle;
+	min-width: 120px;
+	border-radius: 5px;
+}
+.node-text.drag-enter {
+	background-color: rgba(55, 55, 55, .1);
+}

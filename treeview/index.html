@@ -3,7 +3,7 @@
 <head>
 	<title></title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="./index.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.min.css">
 </head>
 <body>
 <div id="tree" style="width: 300px;">
@@ -21,7 +21,7 @@
 	</ul> -->
 </div>
 <button onclick="test()">click</button>
-<script type="text/javascript" src="./index.js"></script>
+<script type="text/javascript" src="./js/index.min.js"></script>
 <script type="text/javascript">
 
 	var tv = new EasyTreeview({
@@ -32,10 +32,10 @@
 			// console.log('%o %o', symbol, node)
 		},
 		onDragged: function (symbol, node) {
-			console.log("dragged")
+			// console.log('%o %o', symbol, node)
 		},
 		onDropped: function (symbol, node) {
-			console.log("dropped")
+			// console.log('%o %o', symbol, node)
 		},
 		onChecked: function (symbol, node, symbols) {
 			// console.log('%o %o %o', symbol, node, symbols)

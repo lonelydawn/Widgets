@@ -7,9 +7,9 @@
 ## Usage
 
 ```html
-<link rel="stylesheet" type="text/css" href="./index.css">
+<link rel="stylesheet" type="text/css" href="./css/index.min.css">
 <div id="slider"></div>
-<script type="text/javascript" src="./index.js"></script>
+<script type="text/javascript" src="./js/index.min.js"></script>
 <script type="text/javascript">
 	var toaster = new Toaster()
 	toaster.info({

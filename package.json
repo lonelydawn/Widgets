@@ -1,0 +1,33 @@
+{
+  "name": "widgets",
+  "version": "1.0.0",
+  "description": "front-end widgets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lonelydawn/Widgets.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "lonelydawn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lonelydawn/Widgets/issues"
+  },
+  "homepage": "https://github.com/lonelydawn/Widgets#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-uglify": "^3.0.0"
+  }
+}

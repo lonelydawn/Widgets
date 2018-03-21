@@ -34,8 +34,6 @@
 </script>
 ```
 
-
-
 ## Example
 
 ```js
@@ -99,8 +97,6 @@ var tv = new EasyTreeview({
 })
 ```
 
-
-
 ## Option
 
 ### el  (String | required)
@@ -137,8 +133,6 @@ Customized node event listener.
 
 Sub tree.
 
-
-
 ## Event
 
 - symbol     index distributed by system
@@ -167,8 +161,6 @@ Triggered when tree node is checked (The treeview should be checkable).
 
 Triggered when tree node is unchecked (The treeview should be checkable).
 
-
-
 ## Method
 
 ### getNodes () : Array
@@ -182,6 +174,29 @@ Get checked node collection.
 ### getTree (): Array
 
 Get new tree data after drag-drop.
+
+##Extra
+
+If you want to customize style detaily, please overwrite the class style of node.
+
+document structure:
+
+```html
+<ul class="sub-tree">
+	<li class="branch-node" draggable="true">
+		<div class="node-body">
+			<span class="collapse-switch"></span>
+			<span class="checkbox"></span>
+			<span class="node-text">节点</span>
+		</div>
+		<ul class="sub-tree">
+			<!-- recursive -->
+		</ul>
+	</li>
+</ul>
+```
+
+
 
 
 

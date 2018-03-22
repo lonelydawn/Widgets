@@ -117,19 +117,19 @@ If value is true, the tree node will have checkbox.
 
 User data which the treeview depended on.
 
-#### data.text (String | required)
+#### data[i].text (String | required)
 
 Text of tree node.
 
-#### data.style (Object | optional)
+#### data[i].style (Object | optional)
 
 Customized node style.
 
-#### data.on (Object | optional)
+#### data[i].on (Object | optional)
 
 Customized node event listener.
 
-#### data.children (Object | optional)
+#### data[i].children (Object | optional)
 
 Sub tree.
 
